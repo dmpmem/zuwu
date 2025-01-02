@@ -58,7 +58,9 @@ reloadopt() {
   noop "${DO_AUTOCD:=true}"
   noop "${DO_ERR_BEEP:=false}"
   noop "${DO_EXTENDED_BLOB:=true}"
-  noop "${LINE_OR_BEGIN_SEARCH_KEY:=false}"
+  noop "${LINE_OR_BEGIN_SEARCH_KEY:=true}"
+  noop "${DELETE_CHAR:=true}"
+  noop "${INSEND_MOVE_KEY:=true}"
   noop "${BINDKEY_KIND:=e}"
 
   __opt() {
@@ -69,6 +71,10 @@ reloadopt() {
     fi
   }
 
+  if [[ "$BINDKEY_KIND" == "e" ]] || [[ "$BINDKEY_KIND" == "v" ]]; then
+    bindkey -"$BINDKEY_KIND"
+  fi
+  
   __opt "$WILL_SHARE_HISTORY" SHARE_HISTORY
   __bindkey "$KEYBIND_FORWARD_WORD" forward-word
   __bindkey "$KEYBIND_BACKWARD_WORD" backward-word
@@ -86,7 +92,18 @@ reloadopt() {
     bindkey -r "^[[A"
     bindkey -r "^[[B"
   fi
-  bindkey -"$BINDKEY_KIND"
+  if "$DELETE_CHAR"; then
+    bindkey "^[[3~" delete-char
+  else
+    bindkey -r "^[[3~"
+  fi
+  if "$INSEND_MOVE_KEY"; then
+    bindkey "^[[H" beginning-of-line
+    bindkey "^[[F" end-of-line
+  else
+    bindkey -r "^[[H"
+    bindkey -r "^[[F"
+  fi
 }
 reloadopt
 
