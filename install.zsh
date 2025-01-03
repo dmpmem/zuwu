@@ -16,11 +16,16 @@ else
 fi
 mkdir -p "$TARGET"
 
-if [[ "$(basename "$__filename")" == "zsh" ]]; then
-  curl -fsSLo "$TARGET/zuwu.zsh" https://git.estrogen.zone/zuwu.git/plain/zuwu.zsh
-else
-  cp -r "$__dirname/zuwu.zsh" "$TARGET/zuwu.zsh"
-fi
+installFile() {
+  mkdir -p "$(dirname "$TARGET/$1")"
+  if [[ "$(basename "$__filename")" == "zsh" ]]; then
+    (curl -fsSLo "$TARGET/$1" https://git.estrogen.zone/zuwu.git/plain/$1 && ! grep 'Repository seems to be empty' "$TARGET/$1") || curl -fsSLo "$TARGET/$1" "https://raw.githubusercontent.com/dmpmem/zuwu/refs/heads/master/$1"
+  else
+    cp -r "$__dirname/$1" "$TARGET/$1"
+  fi
+}
+installFile zuwu.zsh
+
 <<EOF_SETUPSCRIPT > "$TARGET/setup.zsh"
 #!/usr/bin/env zsh
 if [[ -f "\$HOME/.zshrc" ]]; then
