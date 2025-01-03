@@ -29,7 +29,7 @@ if [[ -f "\$HOME/.zshrc" ]]; then
   mv "\$HOME/.zshrc" "\$NEWZSHRC"
 fi
 <<EOF_ZSHRC > "\$HOME/.zshrc"
-for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu \\\$HOME/.local/share/zsh/plugins/zuwu; do
+for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\\\$HOME/.local/share/zsh/plugins/zuwu"; do
   if [[ -d "\\\$d" ]]; then
     source "\\\$d/zuwu.zsh"
   fi
