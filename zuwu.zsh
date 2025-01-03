@@ -3,6 +3,8 @@
 
 export _ZUWU_INSTALLED=1;
 
+if [[ "$_ZUWU_DEBUG" == "1" ]]; then set -ax; fi
+
 # Completion Handling
 if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 2>/dev/null && ! grep 'compinit' ~/.zshrc; then
   <<EOF >> ~/.zshrc
@@ -202,3 +204,5 @@ fi
 if [[ "$SAVEHIST" == "30" ]]; then
   SAVEHIST="10000"
 fi
+
+if [[ "$_ZUWU_DEBUG" == "1" ]]; then set +ax; fi
