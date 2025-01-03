@@ -3,6 +3,7 @@
 
 export _ZUWU_INSTALLED=1;
 
+# Completion Handling
 if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 2>/dev/null && ! grep 'compinit' ~/.zshrc; then
   <<EOF >> ~/.zshrc
 # Note: Do not remove the 'The following lines were...' comment!
@@ -20,6 +21,7 @@ compinit
 # End of lines added by compinstall
 EOF
 fi
+# History Size Determination
 if ! grep 'HISTSIZE' ~/.zshrc >/dev/null 2>/dev/null; then
   <<EOF >>~/.zshrc
 # Lines configured by zsh-newuser-install
@@ -30,9 +32,10 @@ SAVEHIST="10000"
 EOF
 fi
 
+# -
 noop() {}
 
-# Fix PATH
+# Ensure ~/.local/bin is in the PATH - note that this will "match" if something like `.*$HOME/.local/bin.*`, i don't care
 if ! grep "$HOME/.local/bin" <<< "$PATH"; then
   echo -n 'if ! grep "$HOME/.local/bin" <<< "$PATH"; then
   export PATH="$PATH:$HOME/.local/bin"
@@ -40,10 +43,16 @@ fi
 ' >> "$HOME/.zshenv"
   export PATH="$PATH:$HOME/.local/bin"
 fi
+# Ensure ~/.local/bin exists
+if ! [[ -d "$HOME/.local/bin" ]]; then
+  mkdir "$HOME/.local/bin" || echo "Failed to create '$HOME/.local/bin' for your sanity's sake. For your own sanity, please make this directory."
+fi
 
+# Load some shit that you will need
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
+# Keybinds and all that jazz
 reloadopt() {
   if [[ -f "$HOME/.zshconf" ]]; then
     if ! [[ -d "$HOME/.config" ]]; then
@@ -103,8 +112,10 @@ reloadopt() {
   fi
   if "$DELETE_CHAR"; then
     bindkey "^[[3~" delete-char
+    bindkey "^[[3;2~" delete-wo0rd
   else
     bindkey -r "^[[3~"
+    bindkey -r "^[[3;2~"
   fi
   if "$INSEND_MOVE_KEY"; then
     bindkey "^[[H" beginning-of-line
@@ -116,13 +127,13 @@ reloadopt() {
 }
 reloadopt
 
+# Fix $HOME path being entirely inlined in zsh completion shit (or any other string at the beginnig thereof)
 if grep "\"$HOME" "$HOME/.zshrc"; then
   sed -i "s|\"$HOME|\"\$HOME|g" "$HOME/.zshrc"
-  # # # # # # # # # # # # # # # # # # # # BUFFER
   zstyle :compinstall filename "$HOME/.zshrc"
 fi
 
-# Load zgen
+# Load zgen, if present
 if [[ -d "$HOME/.zgen" ]]; then
   source "$HOME/.zgen/zgen.zsh"
   ZGEN=true
