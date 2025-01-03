@@ -1,5 +1,5 @@
 #!/usr/bin/env zsh
-set -eax
+set -e
 __filename="$(realpath "$0")"
 __dirname="$(dirname "$__filename")"
 
@@ -17,8 +17,7 @@ fi
 mkdir -p "$TARGET"
 
 if [[ "$(basename "$__filename")" == "zsh" ]]; then
-  echo 'todo: implement this'
-  exit 1
+  curl -fsSLo "$TARGET/zuwu.zsh" https://git.estrogen.zone/zuwu.git/plain/zuwu.zsh
 else
   cp -r "$__dirname/zuwu.zsh" "$TARGET/zuwu.zsh"
 fi
