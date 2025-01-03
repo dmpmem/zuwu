@@ -6,7 +6,7 @@ export _ZUWU_INSTALLED=1;
 if [[ "$_ZUWU_DEBUG" == "1" ]]; then set -ax; fi
 
 # Completion Handling
-if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 2>/dev/null && ! grep 'compinit' ~/.zshrc; then
+if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 2>/dev/null && ! grep 'compinit' ~/.zshrc >/dev/null 2>/dev/null; then
   <<EOF >> ~/.zshrc
 # Note: Do not remove the 'The following lines were...' comment!
 # The following lines were added by compinstall
@@ -38,8 +38,8 @@ fi
 noop() {}
 
 # Ensure ~/.local/bin is in the PATH - note that this will "match" if something like `.*$HOME/.local/bin.*`, i don't care
-if ! grep "$HOME/.local/bin" <<< "$PATH"; then
-  echo -n 'if ! grep "$HOME/.local/bin" <<< "$PATH"; then
+if ! grep "$HOME/.local/bin" <<< "$PATH" >/dev/null 2>/dev/null; then
+  echo -n 'if ! grep "$HOME/.local/bin" <<< "$PATH" >/dev/null 2>/dev/null; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
 ' >> "$HOME/.zshenv"
@@ -130,7 +130,7 @@ reloadopt() {
 reloadopt
 
 # Fix $HOME path being entirely inlined in zsh completion shit (or any other string at the beginnig thereof)
-if grep "\"$HOME" "$HOME/.zshrc"; then
+if grep "\"$HOME" "$HOME/.zshrc" >/dev/null 2>/dev/null; then
   sed -i "s|\"$HOME|\"\$HOME|g" "$HOME/.zshrc"
   zstyle :compinstall filename "$HOME/.zshrc"
 fi
