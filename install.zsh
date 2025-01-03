@@ -40,7 +40,7 @@ for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\\\$HOME
   fi
 done
 EOF_ZSHRC
-echo -e "\x1b[0;32mPlease run \x1b[0;34msource \$HOME/.zshrc\x1b[0;32m to finish installing zuwu.\x1b[0m"
+echo -e "\x1b[0;32mPlease run \x1b[0;34msource \$HOME/.zshrc\x1b[0;32m to load zuwu into the current shell.\x1b[0m"
 EOF_SETUPSCRIPT
 chmod +x "$TARGET/setup.zsh"
 if [[ "$_ZUWU_INSTALLED" != "1" ]]; then
