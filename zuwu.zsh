@@ -114,7 +114,7 @@ reloadopt() {
   fi
   if "$DELETE_CHAR"; then
     bindkey "^[[3~" delete-char
-    bindkey "^[[3;2~" delete-wo0rd
+    bindkey "^[[3;2~" delete-word
   else
     bindkey -r "^[[3~"
     bindkey -r "^[[3;2~"
@@ -152,19 +152,19 @@ _each_share_dir() {
 
 # Plugins
 # > ZSH Autosuggestions
-for f in "$(_each_share_dir zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh zsh-autosuggestions/zsh-autosuggestions.zsh)"; do
+while IFS= read -r f; do
   if [[ -f "$f" ]]; then
     source "$f"
     break
   fi
-done
+done <<< "$(_each_share_dir zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh zsh-autosuggestions/zsh-autosuggestions.zsh)"
 # > ZSH Syntax Highlighting
-for f in "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)"; do
+while IFS= read -r f; do
   if [[ -f "$f" ]]; then
     source "$f"
     break
   fi
-done
+done <<< "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)"
 
 # Cute Prompting
 if [[ -f ~/.config/starship.toml ]]; then
