@@ -31,6 +31,9 @@ HISTFILE="~/.histfile"
 HISTSIZE="10000"
 SAVEHIST="10000"
 # End of lines configured by zsh-newuser-install
+
+# Overwrite histfile with zuwu implementation, using HISTDIR and HISTID - if you don't want this implementation, comment out the next line.
+__sethist
 EOF
 fi
 
