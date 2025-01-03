@@ -32,6 +32,15 @@ fi
 
 noop() {}
 
+# Fix PATH
+if ! grep "$HOME/.local/bin" <<< "$PATH"; then
+  echo -n 'if ! grep "$HOME/.local/bin" <<< "$PATH"; then
+  export PATH="$PATH:$HOME/.local/bin"
+fi
+' >> "$HOME/.zshenv"
+  export PATH="$PATH:$HOME/.local/bin"
+fi
+
 autoload -U up-line-or-beginning-search
 autoload -U down-line-or-beginning-search
 
