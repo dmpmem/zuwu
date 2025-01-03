@@ -21,6 +21,7 @@ zstyle ':compinstall' filename "\$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
 EOF
 fi
 # History Size Determination
