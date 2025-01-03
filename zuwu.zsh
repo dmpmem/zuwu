@@ -23,9 +23,9 @@ fi
 if ! grep 'HISTSIZE' ~/.zshrc >/dev/null 2>/dev/null; then
   <<EOF >>~/.zshrc
 # Lines configured by zsh-newuser-install
-: "\${HISTFILE:="~/.histfile"}"
-: "\${HISTSIZE:="10000"}"
-: "\${SAVEHIST:="10000"}"
+HISTFILE="~/.histfile"
+HISTSIZE="10000"
+SAVEHIST="10000"
 # End of lines configured by zsh-newuser-install
 EOF
 fi
@@ -172,3 +172,10 @@ __sethist() {
 
 __sethist
 
+# For some reason, 30 tends to be a common "default" setting for this when not manually specified on shitty systems
+if [[ "$HISTSIZE" == "30" ]]; then
+  HISTSIZE="10000"
+fi
+if [[ "$SAVEHIST" == "30" ]]; then
+  SAVEHIST="10000"
+fi
