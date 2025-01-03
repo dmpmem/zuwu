@@ -150,6 +150,9 @@ if [[ -f ~/.config/starship.toml ]]; then
 else
   _SYS_USER_COLOUR="%F{22}"
   _SYS_SYSTEM_COLOUR="%B%F{green}"
+  if [[ "$(whoami)" == "root" ]]; then
+    _SYS_USER_COLOUR="%F{red}"
+  fi
   PROMPT="$(echo -n "${_SYS_USER_COLOUR}%n%f%F{7}@%f${_SYS_SYSTEM_COLOUR}%m%f%b%F{7} in %f%B%F{27}%~%f%b\n%B%F{magenta}%(?..%F{red})❯ %f%b")"
   RPROMPT="%B%F{magenta}%(?..%F{red})%?%f%b"
 fi
