@@ -1,4 +1,4 @@
-![readme title image](https://files.catbox.moe/sg16ei.png)
+![readme title image](https://web.archive.org/web/20250107095158if_/https://files.catbox.moe/sg16ei.png)
 
 # zuwu.zsh &mdash; usable defaults for zsh
 
