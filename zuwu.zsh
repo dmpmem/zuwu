@@ -183,11 +183,43 @@ done <<< "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-hig
 if [[ -f ~/.config/starship.toml ]]; then
   eval "$(starship init zsh)"
 else
-  _SYS_USER_COLOUR="%F{22}"
-  _SYS_SYSTEM_COLOUR="%B%F{green}"
+  # unsure of source of function, 
+  hsv2rgb() {
+    local h=$1
+    local s=$2
+    local v=$3
+    local s_float=$(echo "$s / 100" | bc -l)
+    local v_float=$(echo "$v / 100" | bc -l)
+    local r g b
+    local i
+    local f p q t
+    i="$((h / 60))"
+    f="$(echo "$h / 60 - $i" | bc -l)"
+    p="$(echo "$v_float * (1 - $s_float)" | bc -l)"
+    q="$(echo "$v_float * (1 - $f * $s_float)" | bc -l)"
+    t="$(echo "$v_float * (1 - (1 - $f) * $s_float)" | bc -l)"
+    case $i in
+      0) r=$v_float; g=$t; b=$p ;;
+      1) r=$q; g=$v_float; b=$p ;;
+      2) r=$p; g=$v_float; b=$t ;;
+      3) r=$p; g=$q; b=$v_float ;;
+      4) r=$t; g=$p; b=$v_float ;;
+      5) r=$v_float; g=$p; b=$q ;;
+    esac
+    r="$(printf "%.0f" $(echo "$r * 255" | bc -l))"
+    g="$(printf "%.0f" $(echo "$g * 255" | bc -l))"
+    b="$(printf "%.0f" $(echo "$b * 255" | bc -l))"
+    echo -n "${r};${g};${b}"
+  }
+  local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x$(cat /etc/hostname | sed 's/./ /' | awk '{print $1}' | sha256sum | cut -c 1-2) * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "$(SYS_HSV_VALUE:-60)")"}"
+  # unset -f hsv2rgb
+
+  _SYS_USER_COLOUR="%F{22}$(echo -ne "\x1b[38;2;${_SYS_RGB}m")"
+  _SYS_SYSTEM_COLOUR="%B%F{green}$(echo -ne "\x1b[38;2;${_SYS_RGB}m")"
   if [[ "$(whoami)" == "root" ]]; then
     _SYS_USER_COLOUR="%F{red}"
   fi
+
   PROMPT="$(echo -n "${_SYS_USER_COLOUR}%n%f%F{7}@%f${_SYS_SYSTEM_COLOUR}%m%f%b%F{7} in %f%B%F{27}%~%f%b\n%B%F{magenta}%(?..%F{red})❯ %f%b")"
   RPROMPT="%B%F{magenta}%(?..%F{red})%?%f%b"
 fi
