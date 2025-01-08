@@ -211,10 +211,11 @@ else
     b="$(printf "%.0f" $(echo "$b * 255" | bc -l))"
     echo -n "${r};${g};${b}"
   }
-  local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x$(cat /etc/hostname | sed 's/./ /' | awk '{print $1}' | sha256sum | cut -c 1-2) * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "${SYS_HSV_VALUE:-60}")"}"
+  local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x$(cat /etc/hostname | sed 's/./ /' | awk '{print $1}' | sha256sum | cut -c 1-2) * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "${SYS_HSV_VALUE:-70}")"}"
+  local _USER_RGB="${USER_RGB:-"$_SYS_RGB"}"
   # unset -f hsv2rgb
 
-  _SYS_USER_COLOUR="%F{22}$(echo -ne "\x1b[38;2;${_SYS_RGB}m")"
+  _SYS_USER_COLOUR="%F{22}$(echo -ne "\x1b[38;2;${_USER_RGB}m")"
   _SYS_SYSTEM_COLOUR="%B%F{green}$(echo -ne "\x1b[38;2;${_SYS_RGB}m")"
   if [[ "$(whoami)" == "root" ]]; then
     _SYS_USER_COLOUR="%F{red}"
