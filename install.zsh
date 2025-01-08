@@ -4,7 +4,7 @@ __filename="$(realpath "$0")"
 __dirname="$(dirname "$__filename")"
 
 if [[ "$TARGET" != "" ]]; then
-  # no-op
+  true; # no-op
 elif [[ "$SYSROOT_PREFIX" != "" ]]; then
   TARGET="$SYSROOT_PREFIX/usr/share/zsh/plugins/zuwu"
 elif [[ "$PREFIX" != "" ]]; then
@@ -19,7 +19,7 @@ mkdir -p "$TARGET"
 installFile() {
   mkdir -p "$(dirname "$TARGET/$1")"
   if [[ "$(basename "$__filename")" == "zsh" ]]; then
-    (curl -fsSLo "$TARGET/$1" https://git.estrogen.zone/zuwu.git/plain/$1 && ! grep 'Repository seems to be empty' "$TARGET/$1") || curl -fsSLo "$TARGET/$1" "https://raw.githubusercontent.com/dmpmem/zuwu/refs/heads/master/$1"
+    (curl -fsSLo "$TARGET/$1" "https://git.estrogen.zone/zuwu.git/plain/$1" && ! grep 'Repository seems to be empty' "$TARGET/$1") || curl -fsSLo "$TARGET/$1" "https://raw.githubusercontent.com/dmpmem/zuwu/refs/heads/master/$1"
   else
     cp -r "$__dirname/$1" "$TARGET/$1"
   fi
