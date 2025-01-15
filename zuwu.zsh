@@ -249,7 +249,7 @@ elif [[ "$_ZUWU_HYPERFAST-$_ZUWU_NO_PROMPT" == "-" ]]; then
     b="$(printf "%.0f" $(echo "$b * 255" | bc -l))"
     echo -n "${r};${g};${b}"
   }
-  local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x$(cat /etc/hostname | sed 's/./ /' | awk '{print $1}' | sha256sum | cut -c 1-2) * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "${SYS_HSV_VALUE:-70}")"}"
+  local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x$(sha256sum <<< "${HOST%%.*}" | cut -c 1-2) * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "${SYS_HSV_VALUE:-70}")"}"
   local _USER_RGB="${USER_RGB:-"$_SYS_RGB"}"
   # unset -f hsv2rgb
 
