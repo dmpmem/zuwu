@@ -1,4 +1,4 @@
-![readme title image](https://web.archive.org/web/20250107095158if_/https://files.catbox.moe/sg16ei.png)
+[![readme title image](https://web.archive.org/web/20250107095158if_/https://files.catbox.moe/sg16ei.png)](https://design.penpot.app/#/view/7b8778b5-b939-80fe-8005-8b3dbcbe8096?page-id=7b8778b5-b939-80fe-8005-8b3dbcbe8097&section=interactions&index=0&share-id=d7727c3e-6ff4-8175-8005-95c838013584)
 
 # zuwu.zsh &mdash; usable defaults for zsh
 
