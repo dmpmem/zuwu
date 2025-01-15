@@ -26,6 +26,7 @@ installFile() {
 }
 installFile COPYING
 installFile zuwu.zsh
+installFile env.zsh
 
 <<EOF_SETUPSCRIPT > "$TARGET/setup.zsh"
 #!/usr/bin/env zsh
