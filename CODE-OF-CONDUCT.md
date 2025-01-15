@@ -1,3 +1,5 @@
+[![code of conduct title image](https://files.catbox.moe/4ytf9r.png)](https://design.penpot.app/#/view/7b8778b5-b939-80fe-8005-8b3dbcbe8096?page-id=7b8778b5-b939-80fe-8005-8b3dbcbe8097&section=interactions&index=0&share-id=d7727c3e-6ff4-8175-8005-95c838013584)
+
 # Code of Conduct
 
 ## Sensibility/Behaviour Guidelines
