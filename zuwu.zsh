@@ -252,7 +252,7 @@ elif [[ "$_ZUWU_HYPERFAST-$_ZUWU_NO_PROMPT" == "-" ]]; then
   local _SHORTHOST_HASH="$(sha256sum <<< "${HOST%%.*}")"
   local _SYS_RGB="${SYS_RGB:-"$(hsv2rgb "${SYS_HSV_HUE:-"$((0x${_SHORTHOST_HASH:0:2} * 360 / 256))"}" "${SYS_HSV_SATURATION:-60}" "${SYS_HSV_VALUE:-70}")"}"
   local _USER_RGB="${USER_RGB:-"$_SYS_RGB"}"
-  # unset -f hsv2rgb
+  unset -f hsv2rgb
 
   _SYS_USER_COLOUR="%F{22}$(echo -ne "\x1b[38;2;${_USER_RGB}m")"
   _SYS_SYSTEM_COLOUR="%B%F{green}$(echo -ne "\x1b[38;2;${_SYS_RGB}m")"
