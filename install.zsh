@@ -24,6 +24,7 @@ installFile() {
     cp -r "$__dirname/$1" "$TARGET/$1"
   fi
 }
+installFile COPYING
 installFile zuwu.zsh
 
 <<EOF_SETUPSCRIPT > "$TARGET/setup.zsh"
@@ -37,6 +38,7 @@ fi
 for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\\\$HOME/.local/share/zsh/plugins/zuwu"; do
   if [[ -d "\\\$d" ]]; then
     source "\\\$d/zuwu.zsh"
+    break
   fi
 done
 EOF_ZSHRC
