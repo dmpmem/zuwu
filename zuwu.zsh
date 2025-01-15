@@ -23,7 +23,7 @@ if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 
   eval_append ~/.zshrc "$(<<EOF
 # Note: Do not remove the 'The following lines were...' comment!
 # The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored _approximate
+zstyle ':completion:*' completer _complete _ignored _correct
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
