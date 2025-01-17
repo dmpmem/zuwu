@@ -123,7 +123,7 @@ reloadopt() {
     fi
   }
 
-  noop "${WILL_SHARE_HISTORY:=false}"
+  noop "${WILL_SHARE_HISTORY:=true}"
   noop "${KEYBIND_FORWARD_WORD:="^[[1;5C"}"
   noop "${KEYBIND_BACKWARD_WORD:="^[[1;5D"}"
   noop "${DO_AUTOCD:=true}"
