@@ -38,20 +38,6 @@ compinit
 EOF
 )"
 fi
-# History Size Determination
-if ! grep 'HISTSIZE' ~/.zshrc >/dev/null 2>/dev/null; then
-  eval_append ~/.zshrc "$(<<EOF
-# Lines configured by zsh-newuser-install
-HISTFILE="~/.histfile"
-HISTSIZE="10000"
-SAVEHIST="10000"
-# End of lines configured by zsh-newuser-install
-
-# Overwrite histfile with zuwu implementation, using HISTDIR and HISTID - if you don't want this implementation, comment out the next line.
-__sethist
-EOF
-)"
-fi
 
 # ZSH Env Setup
 if ! [[ -f "$HOME/.zshenv" ]]; then
@@ -287,6 +273,21 @@ __sethist() {
 }
 
 __sethist
+
+# History Size Determination
+if ! grep 'HISTSIZE' ~/.zshrc >/dev/null 2>/dev/null; then
+  eval_append ~/.zshrc "$(<<EOF
+# Lines configured by zsh-newuser-install
+HISTFILE="~/.histfile"
+HISTSIZE="10000"
+SAVEHIST="10000"
+# End of lines configured by zsh-newuser-install
+
+# Overwrite histfile with zuwu implementation, using HISTDIR and HISTID - if you don't want this implementation, comment out the next line.
+__sethist
+EOF
+)"
+fi
 
 # For some reason, 30 tends to be a common "default" setting for this when not manually specified on shitty systems
 if [[ "$HISTSIZE" == "30" ]]; then
