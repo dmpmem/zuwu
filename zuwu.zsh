@@ -88,14 +88,11 @@ fi
 # -
 noop() {}
 
-# Ensure ~/.local/bin is in the PATH - note that this will "match" if something like `.*$HOME/.local/bin.*`, i don't care
-if ! grep "$HOME/.local/bin" <<< "$PATH" >/dev/null 2>/dev/null; then
-  echo -n 'if ! grep "$HOME/.local/bin" <<< "$PATH" >/dev/null 2>/dev/null; then
+# Ensure ~/.local/bin is in the PATH
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
   export PATH="$PATH:$HOME/.local/bin"
 fi
-' >> "$HOME/.zshenv"
-  export PATH="$PATH:$HOME/.local/bin"
-fi
+
 # Ensure ~/.local/bin exists
 if ! [[ -d "$HOME/.local/bin" ]]; then
   mkdir "$HOME/.local/bin" || echo "Failed to create '$HOME/.local/bin' for your sanity's sake. For your own sanity, please make this directory."

@@ -8,6 +8,8 @@
 #
 
 # Currently, we just ensure your environment is sensible - e.g. we ensure your LANG is well-defined, etc...
+
+# Validate $LANG is set correctly
 if [[ "$VALIDATE_LANG" != "false" ]]; then
   if [[ "$LANG" == "" ]] || [[ "$LANG" == "C" ]]; then
     # Modern systems will have UTF-8 everywhere outside of a TTY.
@@ -21,4 +23,9 @@ if [[ "$VALIDATE_LANG" != "false" ]]; then
   if [[ "$LC_ALL" == "" ]] || [[ "$LC_ALL" == "C" ]]; then
     export LC_ALL="$LANG"
   fi
+fi
+
+# Ensure ~/.local/bin is in the PATH
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+  export PATH="$PATH:$HOME/.local/bin"
 fi
