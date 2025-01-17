@@ -14,7 +14,7 @@ if [[ "$VALIDATE_LANG" != "false" ]]; then
   if [[ "$LANG" == "" ]] || [[ "$LANG" == "C" ]]; then
     # Modern systems will have UTF-8 everywhere outside of a TTY.
     # Login Shells are the only shell likely to be a TTY (although theoretically other shells could also be login shells, but like idc if 1% of thigns break).
-    if [[ "$-" == *l* ]]; then
+    if [[ "$-" != *l* ]]; then
       export LANG="C.UTF-8"
     else
       export LANG="C"
