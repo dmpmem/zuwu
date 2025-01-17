@@ -7,4 +7,18 @@
 #   memdmp <https://mem.estrogen.zone/>
 #
 
-# Currently empty, however this may change at a later date to, for example, load a .config/env & .config/env.d/, or similar.
+# Currently, we just ensure your environment is sensible - e.g. we ensure your LANG is well-defined, etc...
+if [[ "$VALIDATE_LANG" != "false" ]]; then
+  if [[ "$LANG" == "" ]] || [[ "$LANG" == "C" ]]; then
+    # Modern systems will have UTF-8 everywhere outside of a TTY.
+    # Login Shells are the only shell likely to be a TTY (although theoretically other shells could also be login shells, but like idc if 1% of thigns break).
+    if [[ "$-" == *l* ]]; then
+      export LANG="C.UTF-8"
+    else
+      export LANG="C"
+    fi
+  fi
+  if [[ "$LC_ALL" == "" ]] || [[ "$LC_ALL" == "C" ]]; then
+    export LC_ALL="$LANG"
+  fi
+fi
