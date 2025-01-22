@@ -54,6 +54,7 @@ installFile env.zsh
 
 <<EOF_SETUPSCRIPT > "$TARGET/setup.zsh"
 #!/usr/bin/env zsh
+set -e
 if [[ -f "\$HOME/.zshrc" ]]; then
   local NEWZSHRC="\$HOME/.zshrc.\$(date -u +%Y-%m-%dT%H:%M:%S%Z)"
   echo -e "\x1b[0;33mExitsing zshrc found, moving to \x1b[0;34m\$NEWZSHRC\x1b[0m"
