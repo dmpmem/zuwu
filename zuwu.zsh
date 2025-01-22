@@ -174,7 +174,7 @@ if grep "\"$HOME" "$HOME/.zshrc" >/dev/null 2>/dev/null; then
 fi
 
 # Load zgen, if present
-if [[ -d "$HOME/.zgen" ]]; then
+if [[ -f "$HOME/.zgen/zgen.zsh" ]]; then
   source "$HOME/.zgen/zgen.zsh"
   export LOADED_ZGEN=true
 fi
