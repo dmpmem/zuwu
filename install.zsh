@@ -36,7 +36,7 @@ elif [[ "$PREFIX" != "" ]]; then
 elif [[ "$(whoami)" == "root" ]]; then
   TARGET="/usr/local/share/zsh/plugins/zuwu"
 else
-  TARGET="$HOME/.local/share/zsh/plugins/zuwu"
+  TARGET="${XDG_DATA_HOME:-"$HOME/.local/share"}/zsh/plugins/zuwu"
 fi
 mkdir -p "$TARGET"
 
@@ -64,7 +64,7 @@ fi
 # - distribution packaging target
 # - local system-wide installation target
 # - local per-user installation target
-for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\\\$HOME/.local/share/zsh/plugins/zuwu"; do
+for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\\\${XDG_DATA_HOME:-"\\\$HOME/.local/share"}/zsh/plugins/zuwu"; do
   if [[ -d "\\\$d" ]]; then
     source "\\\$d/zuwu.zsh"
     # For debugging, calling _ZUWU_DETECTED_INSTALL_PATH=/dev/null zsh -c 'source ~/.zshrc && echo "\\\$_ZUWU_DETECTED_INSTALL_PATH"' may be useful

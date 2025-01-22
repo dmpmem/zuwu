@@ -63,7 +63,7 @@ if ! [[ -f "$HOME/.zshenv" ]]; then
 #
 
 # Remove the following line if you do not want zuwu's environment.
-for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\$HOME/.local/share/zsh/plugins/zuwu"; do
+for d in /usr/share/zsh/plugins/zuwu /usr/local/share/zsh/plugins/zuwu "\${XDG_DATA_HOME:-"\$HOME/.local/share"}/zsh/plugins/zuwu"; do
   if [[ -f "\$d/env.zsh" ]]; then
     source "\$d/env.zsh"
     break
@@ -95,13 +95,14 @@ autoload -U down-line-or-beginning-search
 # Keybinds and all that jazz
 reloadopt() {
   if [[ -f "$HOME/.zshconf" ]]; then
-    if ! [[ -d "$HOME/.config" ]]; then
-      mkdir "$HOME/.config"
+    no-op "${XDG_CONFIG_HOME:="$HOME/.config"}";
+    if ! [[ -d "$XDG_CONFIG_HOME" ]]; then
+      mkdir "$XDG_CONFIG_HOME"
     fi
-    mv "$HOME/.zshconf" "$HOME/.config/zuwu.conf"
+    mv "$HOME/.zshconf" "$XDG_CONFIG_HOME}/zuwu.conf"
   fi
-  if [[ -f "$HOME/.config/zuwu.conf" ]]; then
-    source "$HOME/.config/zuwu.conf"
+  if [[ -f "$XDG_CONFIG_HOME.conf" ]]; then
+    source "$XDG_CONFIG_HOME.conf"
   fi
   
   __bindkey() {
@@ -205,7 +206,7 @@ while IFS= read -r f; do
 done <<< "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)"
 
 # Cute Prompting
-if [[ "$_ZUWU_NO_STARSHIP-$_ZUWU_NO_PROMPT" == "-" ]] && [[ -f ~/.config/starship.toml ]] && type "starship" >/dev/null; then
+if [[ "$_ZUWU_NO_STARSHIP-$_ZUWU_NO_PROMPT" == "-" ]] && [[ -f "${XDG_CONFIG_HOME:-"$HOME/.config"}/starship.toml" ]] && type "starship" >/dev/null; then
   eval "$(starship init zsh)"
 elif [[ "$_ZUWU_HYPERFAST-$_ZUWU_NO_PROMPT" == "-" ]]; then
   # unsure of source of function
