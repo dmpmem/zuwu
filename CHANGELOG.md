@@ -6,6 +6,8 @@ This is a provisionary changelog for until someone develops a less-hellish [chan
 
 ## pending release
 
+The changes below are not available in a stable release yet, and are only available in the current branch.
+
 ### Misc
 
 - Add comment describing loading priority of paths ([`04155f5`](https://git.estrogen.zone/zuwu.git/commit/?id=04155f5d1afb2313c57daf98109e20bb6f3e22c9))
