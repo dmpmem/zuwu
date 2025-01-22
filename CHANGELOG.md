@@ -4,6 +4,17 @@
 
 This is a provisionary changelog for until someone develops a less-hellish [changesets](https://github.com/changesets/changesets) replacement
 
+## pending release
+
+### Misc
+
+- Add comment describing loading priority of paths ([`04155f5`](https://git.estrogen.zone/zuwu.git/commit/?id=04155f5d1afb2313c57daf98109e20bb6f3e22c9))
+- Make setup.zsh `set -e`'d ([`2177c3a`](https://git.estrogen.zone/zuwu.git/commit/?id=2177c3a6fc6ae8a167e6c1b164ab0022595c38d9))
+
+### Fixes
+
+- Use `XDG_{CONFIG,DATA}_HOME` instead of `$HOME/{.config,.local/share}` ([`1c202b4`](https://git.estrogen.zone/zuwu.git/commit/?id=1c202b4bb8bc8e1e9a951c3b85101c5c59821896))
+
 ## v0.2.0
 
 ### Features
