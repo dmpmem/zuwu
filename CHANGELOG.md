@@ -10,6 +10,10 @@ The changes below are not available in a stable release yet, and are only availa
 
 Items here can change in various ways, and changes introduced here should not be considered *stable*.
 
+As of right now, there are no pending changes that aren't slated for a stable release.
+
+## v0.2.1
+
 ### Misc
 
 - Add comment describing loading priority of paths ([`04155f5`](https://git.estrogen.zone/zuwu.git/commit/?id=04155f5d1afb2313c57daf98109e20bb6f3e22c9))
