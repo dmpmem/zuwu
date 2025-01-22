@@ -4,6 +4,28 @@
 
 This is a provisionary changelog for until someone develops a less-hellish [changesets](https://github.com/changesets/changesets) replacement
 
+## v0.2.0
+
+### Features
+
+- Default to sharing history between shells ([`f598c8a`](https://git.estrogen.zone/zuwu.git/commit/?id=f598c8aac0a93ff477974d3bbde14aef34c0ae85))
+- Ensure LANG and LC_ALL are set - and outside of a login shell, have UTF-8 available ([`d08ee7b`](https://git.estrogen.zone/zuwu.git/commit/?id=d08ee7b1f0ae2bbd3491939557032c6117807dae), [`9300c0e`](https://git.estrogen.zone/zuwu.git/commit/?id=9300c0e8c19352da49c99b07b3d8086d1403e331))
+- Ensure `$HOME/.local/bin` is in PATH ([`cc3c1f5`](https://git.estrogen.zone/zuwu.git/commit/?id=cc3c1f5e9f132716bad18fd8f956bb4ae0517bcb))
+
+### Misc
+
+- Properly define copyright and license information ([`8360523`](https://git.estrogen.zone/zuwu.git/commit/?id=8360523f9fedd19b70abfd5fa6ed239655ea49e0))
+- Create small utility script for referencing commits ([`43cb34c`](https://git.estrogen.zone/zuwu.git/commit/?id=43cb34cbb14d45f19a7cac040e2f22fd58f9f14e))
+- Use codeblocks for commit ids ([`dc50fbb`](https://git.estrogen.zone/zuwu.git/commit/?id=dc50fbb52806b9b123049a440d0bedeac9667bba))
+
+### Fixes
+
+- Only call `__sethist` after definition on first run ([`f104b3c`](https://git.estrogen.zone/zuwu.git/commit/?id=f104b3c3064571df3f90351633390ff37e90b443))
+- Avoid grepping contents of `.zshrc` for appending sections ([`9e36977`](https://git.estrogen.zone/zuwu.git/commit/?id=9e36977b9d4641c9fc67eee9b36bdfa8a3b85bbd))
+- Only call `__sethist` if it exists - ie if no installation occurs, don't error ([`9e36977`](https://git.estrogen.zone/zuwu.git/commit/?id=9e36977b9d4641c9fc67eee9b36bdfa8a3b85bbd))
+- Check against `zgen.zsh` as a file, not `.zgen` as a directory ([`af4b31e`](https://git.estrogen.zone/zuwu.git/commit/?id=af4b31e2e0f6d1aff38781b3cc4367af52b39460))
+- Don't export `LOADED_ZGEN` to processes ([`93757c9`](https://git.estrogen.zone/zuwu.git/commit/?id=93757c93590fa21ff040a51e72f7698cfb5f444a))
+
 ## v0.1.0
 
 ### Features
