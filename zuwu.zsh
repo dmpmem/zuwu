@@ -27,7 +27,7 @@ eval_append() {
 if ! test compinit >/dev/null 2>/dev/null; then
   eval_append ~/.zshrc "$(<<EOF
 # The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored _correct
+zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
