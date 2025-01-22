@@ -12,7 +12,7 @@ Items here can change in various ways, and changes introduced here should not be
 
 As of right now, there are no pending changes that aren't slated for a stable release.
 
-## v0.2.1
+## v0.2.1 [`fddadc4`](https://git.estrogen.zone/zuwu.git/commit/?id=fddadc4c0e678903a340058e561d37f3773e36d6)
 
 ### Misc
 
@@ -24,7 +24,7 @@ As of right now, there are no pending changes that aren't slated for a stable re
 
 - Use `XDG_{CONFIG,DATA}_HOME` instead of `$HOME/{.config,.local/share}` ([`1c202b4`](https://git.estrogen.zone/zuwu.git/commit/?id=1c202b4bb8bc8e1e9a951c3b85101c5c59821896))
 
-## v0.2.0
+## v0.2.0 [`a985eb2`](https://git.estrogen.zone/zuwu.git/commit/?id=a985eb25f2a44dc3d40d29210306e118f19f1784)
 
 ### Features
 
@@ -46,7 +46,7 @@ As of right now, there are no pending changes that aren't slated for a stable re
 - Check against `zgen.zsh` as a file, not `.zgen` as a directory ([`af4b31e`](https://git.estrogen.zone/zuwu.git/commit/?id=af4b31e2e0f6d1aff38781b3cc4367af52b39460))
 - Don't export `LOADED_ZGEN` to processes ([`93757c9`](https://git.estrogen.zone/zuwu.git/commit/?id=93757c93590fa21ff040a51e72f7698cfb5f444a))
 
-## v0.1.0
+## v0.1.0 [`7b7453c`](https://git.estrogen.zone/zuwu.git/commit/?id=7b7453cae1d9f75d5665ed0dba4870774861b9ee)
 
 ### Features
 
@@ -63,6 +63,6 @@ As of right now, there are no pending changes that aren't slated for a stable re
 - License under MIT ([`702e934`](https://git.estrogen.zone/zuwu.git/commit/?id=702e934bec9ba2105f278cdab97ae272cdac03b3))
   - Rant about LLMs ([`0652590`](https://git.estrogen.zone/zuwu.git/commit/?id=0652590d95070eba229544ad63c0cf8d686b2ffa), [`c4de2e9`](https://git.estrogen.zone/zuwu.git/commit/?id=c4de2e9c0594db30594ff9c071eee73939e7b9ec))
 
-## v0.0.0
+## v0.0.0 [`d2d86dd`](https://git.estrogen.zone/zuwu.git/commit/?id=d2d86dd3162c0cfd2541bb82026f6e6cdd8573b0)
 
 - Initial Release
