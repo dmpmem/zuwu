@@ -12,6 +12,7 @@ The changes below are not available in a stable release yet, and are only availa
 
 - Add comment describing loading priority of paths ([`04155f5`](https://git.estrogen.zone/zuwu.git/commit/?id=04155f5d1afb2313c57daf98109e20bb6f3e22c9))
 - Make setup.zsh `set -e`'d ([`2177c3a`](https://git.estrogen.zone/zuwu.git/commit/?id=2177c3a6fc6ae8a167e6c1b164ab0022595c38d9))
+- Add a `pending release` changelog section ([`9d97d45`](https://git.estrogen.zone/zuwu.git/commit/?id=9d97d456cffd0db4ea7074cdda803cb10debe18a), [`e4bebb3`](https://git.estrogen.zone/zuwu.git/commit/?id=e4bebb3a813411558f6993c4da64c0d667827a18))
 
 ### Fixes
 
