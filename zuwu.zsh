@@ -176,7 +176,7 @@ fi
 # Load zgen, if present
 if [[ -f "$HOME/.zgen/zgen.zsh" ]]; then
   source "$HOME/.zgen/zgen.zsh"
-  export LOADED_ZGEN=true
+  LOADED_ZGEN=true
 fi
 
 # Utilities
