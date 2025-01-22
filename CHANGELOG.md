@@ -10,7 +10,11 @@ The changes below are not available in a stable release yet, and are only availa
 
 Items here can change in various ways, and changes introduced here should not be considered *stable*.
 
-As of right now, there are no pending changes that aren't slated for a stable release.
+<!-- As of right now, there are no pending changes that aren't slated for a stable release. -->
+
+### Fixes
+
+- For new installs, set `_approximate` in autocorrect handlers, instead of `_correct` ([`22664ec`](https://git.estrogen.zone/zuwu.git/commit/?id=22664eccc8ac4738f4a88ecedfe916a50413c79b))
 
 ## v0.2.1 [`fddadc4`](https://git.estrogen.zone/zuwu.git/commit/?id=fddadc4c0e678903a340058e561d37f3773e36d6)
 
