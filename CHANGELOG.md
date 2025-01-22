@@ -15,6 +15,7 @@ Items here can change in various ways, and changes introduced here should not be
 ### Fixes
 
 - For new installs, set `_approximate` in autocorrect handlers, instead of `_correct` ([`22664ec`](https://git.estrogen.zone/zuwu.git/commit/?id=22664eccc8ac4738f4a88ecedfe916a50413c79b))
+  - If you want this behaviour on existing installations, simply run `sed -i s/_correct/_approximate/ ~/.zshrc` and reload your `.zshrc`
 
 ## v0.2.1 [`fddadc4`](https://git.estrogen.zone/zuwu.git/commit/?id=fddadc4c0e678903a340058e561d37f3773e36d6)
 
