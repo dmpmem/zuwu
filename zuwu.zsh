@@ -19,9 +19,8 @@ eval_append() {
   <<<"$2" >> "$1"
   eval "$2"
 }
-if ! grep '# The following lines were added by compinstall' ~/.zshrc >/dev/null 2>/dev/null && ! grep 'compinit' ~/.zshrc >/dev/null 2>/dev/null; then
+if ! test compinit >/dev/null 2>/dev/null; then
   eval_append ~/.zshrc "$(<<EOF
-# Note: Do not remove the 'The following lines were...' comment!
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored _correct
 zstyle ':completion:*' format 'Completing %d'
@@ -275,7 +274,7 @@ __sethist() {
 __sethist
 
 # History Size Determination
-if ! grep 'HISTSIZE' ~/.zshrc >/dev/null 2>/dev/null; then
+if ! [ -n "${HISTSIZE+1}" ]; then
   eval_append ~/.zshrc "$(<<EOF
 # Lines configured by zsh-newuser-install
 HISTFILE="~/.histfile"
@@ -284,7 +283,7 @@ SAVEHIST="10000"
 # End of lines configured by zsh-newuser-install
 
 # Overwrite histfile with zuwu implementation, using HISTDIR and HISTID - if you don't want this implementation, comment out the next line.
-__sethist
+typeset -f __sethist >/dev/null 2>/dev/null && __sethist || true
 EOF
 )"
 fi
