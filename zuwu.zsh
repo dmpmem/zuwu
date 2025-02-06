@@ -121,6 +121,7 @@ reloadopt() {
   noop "${DELETE_CHAR:=true}"
   noop "${INSEND_MOVE_KEY:=true}"
   noop "${BINDKEY_KIND:=e}"
+  noop "${USE_COLOURED_LS_GREP:=true}"
 
   __opt() {
     if "$1"; then
@@ -140,6 +141,14 @@ reloadopt() {
   __opt "$DO_AUTOCD" autocd
   __opt "$DO_ERR_BEEP" beep
   __opt "$DO_EXTENDED_BLOB" extendedglob
+  if "$USE_COLOURED_LS_GREP"; then
+    if [[ "$(which ls 2>&1)" != *color=* ]]; then
+      alias ls="ls --color=auto";
+    fi
+    if [[ "$(which grep 2>&1)" != *color=* ]]; then
+      alias grep="grep --color=auto"
+    fi
+  fi
   if "$LINE_OR_BEGIN_SEARCH_KEY"; then
     _bkey() {
       zle -N "$1"
