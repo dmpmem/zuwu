@@ -101,8 +101,8 @@ reloadopt() {
     fi
     mv "$HOME/.zshconf" "${XDG_CONFIG_HOME}/zuwu.conf"
   fi
-  if [[ -f "$XDG_CONFIG_HOME/zuwu.conf" ]]; then
-    source "$XDG_CONFIG_HOME/zuwu.conf"
+  if [[ -f "${XDG_CONFIG_HOME:-"$HOME/.config"}/zuwu.conf" ]]; then
+    source "${XDG_CONFIG_HOME:-"$HOME/.config"}/zuwu.conf"
   fi
   
   __bindkey() {
