@@ -10,9 +10,13 @@ The changes below are not available in a stable release yet, and are only availa
 
 Items here can change in various ways, and changes introduced here should not be considered _stable_.
 
-As of right now, there are no pending changes that aren't slated for a stable release.
+<!-- As of right now, there are no pending changes that aren't slated for a stable release. -->
 
 <!-- Use [`current-commit`](https://git.estrogen.zone/zuwu.git/commit/?h=vx.y.z) in tagged commit for the commit ID of the next commit -->
+
+### Features
+
+- Re-introduced the `_approximate` in a way that stops being annoying ([`8a3d950`](https://git.estrogen.zone/zuwu.git/commit/?id=8a3d950321b7fc935015886dce31ff2c9f9b7840))
 
 ## v0.3.0 [`659b38a`](https://git.estrogen.zone/zuwu.git/commit/?id=659b38a44e442067d99fd83fac589fa1b359e1a4)
 
