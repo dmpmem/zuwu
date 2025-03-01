@@ -8,14 +8,27 @@ This is a provisionary changelog for until someone develops a less-hellish [chan
 
 The changes below are not available in a stable release yet, and are only available in the current branch.
 
-Items here can change in various ways, and changes introduced here should not be considered *stable*.
+Items here can change in various ways, and changes introduced here should not be considered _stable_.
 
 <!-- As of right now, there are no pending changes that aren't slated for a stable release. -->
 
+### Features
+
+- **Breaking:** Add a `USE_COLOURED_LS_GREP` environment variable (defaulting to `true`), that adds `--color=auto` to `ls` and `grep` unless `color=` is in the relevant `which`'s return value ([`71385bc`](https://git.estrogen.zone/zuwu.git/commit/?id=71385bcaa56690e1320a4b8b3f8af70a7d6938f2))
+  - To disable, do one of:
+    - Before zuwu is loaded, set the aliases `alias ls="ls --color=never"` and `alias grep="grep --color=never"`
+    - Pass it to the specific invocation - most implementations will use the last `color=`
+      - This won't work if the implementation dies when it's specified at all
+    - Set `USE_COLOURED_LS_GREP=false` in your `${XDG_CONFIG_HOME:-"$HOME/.config"}/zuwu.conf`
+- **Breaking:** Add ctrl+del binding to `delete-word` ([`c5faf5f`](https://git.estrogen.zone/zuwu.git/commit/?id=c5faf5f1db6a3eb88e7c1c38c05d2cd1df8a3d57))
+  - To disable, add `DELETE_CHAR=false` to your `${XDG_CONFIG_HOME:-"$HOME/.config"}/zuwu.conf` config file.
+  - Once disabled, to return the old `del` character behaviour (which is still present), add `bindkey "^[[3~" delete-char && bindkey "^[[3;2~" delete-word` to your `.zshrc` **after** the zsh load.
+
 ### Fixes
 
-- For new installs, set `_approximate` in autocorrect handlers, instead of `_correct` ([`22664ec`](https://git.estrogen.zone/zuwu.git/commit/?id=22664eccc8ac4738f4a88ecedfe916a50413c79b))
-  - If you want this behaviour on existing installations, simply run `sed -i s/_correct/_approximate/ ~/.zshrc` and reload your `.zshrc`
+- Resolve a code of conduct moment ([`927e7e6`](https://git.estrogen.zone/zuwu.git/commit/?id=927e7e66d065d38bb8a891171945e6ecdb6a6abe))
+- Resolve a config handling bug ([`e90726c`](https://git.estrogen.zone/zuwu.git/commit/?id=e90726c70dd224f1473124ffb05f1720056ea740))
+- Resolve another config handling bug ([`81defa2`](https://git.estrogen.zone/zuwu.git/commit/?id=81defa2bbcf3d1a76eb6b7befcd7761690dc2af5))
 
 ## v0.2.1 [`fddadc4`](https://git.estrogen.zone/zuwu.git/commit/?id=fddadc4c0e678903a340058e561d37f3773e36d6)
 
