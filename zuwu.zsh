@@ -293,8 +293,9 @@ __sethist() {
 __sethist
 
 # History Size Determination
-if ! [ -n "${HISTSIZE+1}" ]; then
-  eval_append ~/.zshrc "$(<<EOF
+if [[ "$AVOID_SETTING_HIST_INFO" == "" ]]; then
+  if ! [ -n "${HISTSIZE+1}" ] || ! [ -n "${SAVEHIST+1}" ]; then
+    eval_append ~/.zshrc "$(<<EOF
 # Lines configured by zsh-newuser-install
 HISTFILE="~/.histfile"
 HISTSIZE="10000"
@@ -305,6 +306,7 @@ SAVEHIST="10000"
 typeset -f __sethist >/dev/null 2>/dev/null && __sethist || true
 EOF
 )"
+  fi
 fi
 
 # For some reason, 30 tends to be a common "default" setting for this when not manually specified on shitty systems
