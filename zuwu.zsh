@@ -188,7 +188,7 @@ if grep "\"$HOME" "$HOME/.zshrc" >/dev/null 2>/dev/null; then
 fi
 
 # Load zgen, if present
-if [[ -f "$HOME/.zgen/zgen.zsh" ]]; then
+if [[ "$SKIP_ZGEN_LOAD" == "" ]] &&  [[ -f "$HOME/.zgen/zgen.zsh" ]]; then
   source "$HOME/.zgen/zgen.zsh"
   LOADED_ZGEN=true
 fi

@@ -14,6 +14,10 @@ Items here can change in various ways, and changes introduced here should not be
 
 <!-- Use [`current-commit`](https://git.estrogen.zone/zuwu.git/commit/?h=vx.y.z) in tagged commit for the commit ID of the next commit -->
 
+### Features
+
+- Add config item (`SKIP_ZGEN_LOAD`, will apply if set to _any_ non-empty value, including `false`) to skip the zgen load checks, if desired
+
 ### Fixes
 
 - Use `which` to detect `compinit` ([`396a5a7`](https://git.estrogen.zone/zuwu.git/commit/?id=396a5a7fb6274d61586a48272f977dab426b1a55))
