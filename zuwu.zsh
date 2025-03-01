@@ -99,7 +99,7 @@ reloadopt() {
     if ! [[ -d "$XDG_CONFIG_HOME" ]]; then
       mkdir "$XDG_CONFIG_HOME"
     fi
-    mv "$HOME/.zshconf" "$XDG_CONFIG_HOME}/zuwu.conf"
+    mv "$HOME/.zshconf" "${XDG_CONFIG_HOME}/zuwu.conf"
   fi
   if [[ -f "$XDG_CONFIG_HOME.conf" ]]; then
     source "$XDG_CONFIG_HOME.conf"
