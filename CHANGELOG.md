@@ -14,6 +14,10 @@ Items here can change in various ways, and changes introduced here should not be
 
 <!-- Use [`current-commit`](https://git.estrogen.zone/zuwu.git/commit/?h=vx.y.z) in tagged commit for the commit ID of the next commit -->
 
+### Fixes
+
+- Use `which` to detect `compinit` ([`396a5a7`](https://git.estrogen.zone/zuwu.git/commit/?id=396a5a7fb6274d61586a48272f977dab426b1a55))
+
 ## v0.3.1 [`1221d0f`](https://git.estrogen.zone/zuwu.git/commit/?id=1221d0f52243ceb94b024ac64f3f36da1ec66b9f)
 
 ### Features
