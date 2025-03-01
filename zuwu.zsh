@@ -27,12 +27,14 @@ eval_append() {
 if ! test compinit >/dev/null 2>/dev/null; then
   eval_append ~/.zshrc "$(<<EOF
 # The following lines were added by compinstall
-zstyle ':completion:*' completer _complete _ignored _correct
+zstyle ':completion:*' completer _complete _ignored _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=** l:|=*' '' '' ''
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]} m:{[:lower:][:upper:]}={[:upper:][:lower:]} r:|[._-]=** r:|=**' 'l:|=* r:|=*' '' ''
+zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' prompt 'Correcting %e'
 zstyle ':compinstall' filename "\$HOME/.zshrc"
 
 autoload -Uz compinit
