@@ -4,15 +4,7 @@
 
 This is a provisionary changelog for until someone develops a less-hellish [changesets](https://github.com/changesets/changesets) replacement
 
-## pending release
-
-The changes below are not available in a stable release yet, and are only available in the current branch.
-
-Items here can change in various ways, and changes introduced here should not be considered _stable_.
-
-<!-- As of right now, there are no pending changes that aren't slated for a stable release. -->
-
-<!-- Use [`current-commit`](https://git.estrogen.zone/zuwu.git/commit/?h=vx.y.z) in tagged commit for the commit ID of the next commit -->
+## v0.3.1 [`current-commit`](https://git.estrogen.zone/zuwu.git/commit/?h=v0.3.1)
 
 ### Features
 
