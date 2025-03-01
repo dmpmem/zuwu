@@ -1,3 +1,9 @@
+<!-- !BEGIN-NO-CGIT! -->
+
+[View this file on upstream cgit](https://git.estrogen.zone/zuwu.git/about/)
+
+<!-- !END-NO-CGIT! -->
+
 [![readme title image](https://web.archive.org/web/20250107095158if_/https://files.catbox.moe/sg16ei.png)](https://design.penpot.app/#/view/7b8778b5-b939-80fe-8005-8b3dbcbe8096?page-id=7b8778b5-b939-80fe-8005-8b3dbcbe8097&section=interactions&index=0&share-id=d7727c3e-6ff4-8175-8005-95c838013584)
 
 # zuwu.zsh &mdash; usable defaults for zsh
@@ -32,7 +38,7 @@ curl -fsSL https://git.estrogen.zone/zuwu.git/plain/install.zsh | zsh
 
 ## use of this project in machine learning training data
 
-As long as your model complies with the [MIT License](./COPYING) and outputs it verbatim with any substantial (as determined by a swiss court) copy of any portion of the code in this repository, enjoy. If it does not output the entire license **consistently, correctly, *including* copyright lines**, you may not use this project in your training data.
+As long as your model complies with the [MIT License](./COPYING) and outputs it verbatim with any substantial (as determined by a swiss court) copy of any portion of the code in this repository, enjoy. If it does not output the entire license **consistently, correctly, _including_ copyright lines**, you may not use this project in your training data.
 
 If you have discovered this project being inappropriately used by a machine learning model as part of starting a class-action lawsuit, please contact me at the email address of [this commit](https://git.estrogen.zone/zuwu.git/commit/?id=4500596485db2cfe6d1f65626644e9692945a6ba). I will happily participate.
 

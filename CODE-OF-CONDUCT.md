@@ -1,3 +1,9 @@
+<!-- !BEGIN-NO-CGIT! -->
+
+[View this file on upstream cgit](https://git.estrogen.zone/zuwu.git/about/CODE-OF-CONDUCT.md)
+
+<!-- !END-NO-CGIT! -->
+
 [![code of conduct title image](https://files.catbox.moe/4ytf9r.png)](https://design.penpot.app/#/view/7b8778b5-b939-80fe-8005-8b3dbcbe8096?page-id=7b8778b5-b939-80fe-8005-8b3dbcbe8097&section=interactions&index=0&share-id=d7727c3e-6ff4-8175-8005-95c838013584)
 
 # Code of Conduct
@@ -5,16 +11,16 @@
 ## Sensibility/Behaviour Guidelines
 
 1. Don't be an asshole.
-2. Don't be transphobic/homophobic/etc... unless you are in a minority affected by the same problem - no, [counter to popular belief](https://catgirl.center/notes/a2dnlu8p43n905jt), cishet white males are not minorities*. This will (usually) not be enforced if the behaviour is found outside of the scope of the project, however pls dont exhibit it there either ty :3
+2. Don't be transphobic/homophobic/etc... unless you are in a minority affected by the same problem - no, [counter to popular belief](https://catgirl.center/notes/a2dnlu8p43n905jt), cishet white males are not minorities\*. This will (usually) not be enforced if the behaviour is found outside of the scope of the project, however pls dont exhibit it there either ty :3
 3. Enforcement of these rules is entirely subjective - my project, my guidelines, my enforcement. If you don't like it, [read the LICENSE](./COPYING), and fork the fuck.
 
-<small>* yes there are exceptions, however being a cishet white male is not a factor that puts you into a minority</small>
+<small>\* yes there are exceptions, however being a cishet white male is not a factor that puts you into a minority</small>
 
 ## Contribution Guidelines
 
 ### Upstream
 
-The upstream repository is *not* [github.com/dmpmem/zuwu.git](https://github.com/dmpmem/zuwu.git) - it is [git.estrogen.zone/zuwu.git](https://git.estrogen.zone/zuwu.git/). Github is a "best-effort-basis" mirroring platform, mostly used to bootstrap [git.estrogen.zone/cgit-oci.git](https://git.estrogen.zone/cgit-oci.git/tree/Containerfile?id=df5e75dcd0b30b1e40b49ac01ce6265a592bdfc7#n81)'s shell when built on [git.estrogen.zone](https://git.estrogen.zone).
+The upstream repository is _not_ [github.com/dmpmem/zuwu.git](https://github.com/dmpmem/zuwu.git) - it is [git.estrogen.zone/zuwu.git](https://git.estrogen.zone/zuwu.git/). Github is a "best-effort-basis" mirroring platform, mostly used to bootstrap [git.estrogen.zone/cgit-oci.git](https://git.estrogen.zone/cgit-oci.git/tree/Containerfile?id=df5e75dcd0b30b1e40b49ac01ce6265a592bdfc7#n81)'s shell when built on [git.estrogen.zone](https://git.estrogen.zone).
 
 Please clone from `https://git.estrogen.zone/zuwu.git`;
 
@@ -30,7 +36,7 @@ Send them [as patches](https://git-scm.com/docs/git-send-email) to the email add
 
 #### Use in Training Data
 
-As long as your model complies with the [MIT License](./COPYING) and outputs it verbatim with any substantial (as determined by a swiss court) copy of any portion of the code in this repository, enjoy. If it does not output the entire license **consistently, correctly, *including* copyright lines**, you may not use this project in your training data.
+As long as your model complies with the [MIT License](./COPYING) and outputs it verbatim with any substantial (as determined by a swiss court) copy of any portion of the code in this repository, enjoy. If it does not output the entire license **consistently, correctly, _including_ copyright lines**, you may not use this project in your training data.
 
 If you have discovered this project being inappropriately used by a machine learning model as part of starting a class-action lawsuit, please contact me at the email address of the above commit. I will happily participate.
 
@@ -90,7 +96,7 @@ You can view, comment on, or merge this pull request online at:
 https://github.com/dmpmem/zuwu/pull/1.patch
 https://github.com/dmpmem/zuwu/pull/1.diff
 
--- 
+--
 Reply to this email directly or view it on GitHub:
 https://github.com/dmpmem/zuwu/pull/1
 You are receiving this because you are subscribed to this thread.
