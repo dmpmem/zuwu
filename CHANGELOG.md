@@ -22,7 +22,7 @@ Items here can change in various ways, and changes introduced here should not be
 
 - Use `which` to detect `compinit` ([`396a5a7`](https://git.estrogen.zone/zuwu.git/commit/?id=396a5a7fb6274d61586a48272f977dab426b1a55))
 - Give `SAVEHIST` the same treatment as `HISTFILE` for initialization of `.zshrc` section ([`c9a27c6`](https://git.estrogen.zone/zuwu.git/commit/?id=c9a27c6a5a29077525db86b955d04ab21bf18f59))
-  - Also applies if it's zero now; if you really want a nonexistent history, set `AVOID_SETTING_HIST_INFO=true` in your config.
+  - Also applies if it's zero now; if you really want a nonexistent history, set `AVOID_SETTING_HIST_INFO=true` in your config ([`69ff5cc`](https://git.estrogen.zone/zuwu.git/commit/?id=69ff5cc5b609666ed34113dd7fea0325013f207a))
 
 ## v0.3.1 [`1221d0f`](https://git.estrogen.zone/zuwu.git/commit/?id=1221d0f52243ceb94b024ac64f3f36da1ec66b9f)
 
