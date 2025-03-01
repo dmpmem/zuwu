@@ -16,7 +16,7 @@ Items here can change in various ways, and changes introduced here should not be
 
 ### Features
 
-- Add config item (`SKIP_ZGEN_LOAD`, will apply if set to _any_ non-empty value, including `false`) to skip the zgen load checks, if desired
+- Add config item (`SKIP_ZGEN_LOAD`, will apply if set to _any_ non-empty value, including `false`) to skip the zgen load checks, if desired ([`07da97d`](https://git.estrogen.zone/zuwu.git/commit/?id=07da97d29382542ea0fae08fcc4716b9198d04c7))
 
 ### Fixes
 
