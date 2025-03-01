@@ -24,7 +24,7 @@ eval_append() {
   <<<"$2" >> "$1"
   eval "$2"
 }
-if ! test compinit >/dev/null 2>/dev/null; then
+if ! which compinit >/dev/null 2>/dev/null; then
   eval_append ~/.zshrc "$(<<EOF
 # The following lines were added by compinstall
 zstyle ':completion:*' completer _complete _ignored _approximate
