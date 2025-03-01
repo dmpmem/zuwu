@@ -294,8 +294,9 @@ __sethist
 
 # History Size Determination
 if [[ "$AVOID_SETTING_HIST_INFO" == "" ]]; then
-  if ! [ -n "${HISTSIZE+1}" ] || ! [ -n "${SAVEHIST+1}" ]; then
-    eval_append ~/.zshrc "$(<<EOF
+  if ! [ -n "${HISTSIZE+1}" ] || ! [ -n "${SAVEHIST+1}" ] || [[ "$SAVEHIST" == "0" ]] || [[ "$HISTSIZE" == "0" ]]; then
+    if ! grep "Lines configured by zsh-newuser-install" ~/.zshrc >/dev/null 2>/dev/null; then
+      eval_append ~/.zshrc "$(<<EOF
 # Lines configured by zsh-newuser-install
 HISTFILE="~/.histfile"
 HISTSIZE="10000"
@@ -306,6 +307,7 @@ SAVEHIST="10000"
 typeset -f __sethist >/dev/null 2>/dev/null && __sethist || true
 EOF
 )"
+    fi
   fi
 fi
 
