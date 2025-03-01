@@ -163,9 +163,11 @@ reloadopt() {
   if "$DELETE_CHAR"; then
     bindkey "^[[3~" delete-char
     bindkey "^[[3;2~" delete-word
+    bindkey "^[[3;5~" delete-word
   else
     bindkey -r "^[[3~"
     bindkey -r "^[[3;2~"
+    bindkey -r "^[[3;5~"
   fi
   if "$INSEND_MOVE_KEY"; then
     bindkey "^[[H" beginning-of-line
