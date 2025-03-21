@@ -216,7 +216,7 @@ while IFS= read -r f; do
     source "$f"
     break
   fi
-done <<< "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)"
+done <<< "$(_each_share_dir zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh zsh-syntax-highlighting/zsh-syntax-highlighting.zsh)"
 
 # Cute Prompting
 if [[ "$_ZUWU_NO_STARSHIP-$_ZUWU_NO_PROMPT" == "-" ]] && [[ -f "${XDG_CONFIG_HOME:-"$HOME/.config"}/starship.toml" ]] && type "starship" >/dev/null; then
